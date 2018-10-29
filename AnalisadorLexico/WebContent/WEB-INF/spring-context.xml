@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	<context:component-scan base-package="br.usjt.transdutor" />
+	<mvc:annotation-driven />
+	
+	<mvc:default-servlet-handler />
+	
+<!-- 	<mvc:interceptors> -->
+<!-- 		<bean class="br.portoseguro.cq.interceptor.AutorizadorInterceptor"/> -->
+<!-- 	</mvc:interceptors> -->
+	
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+<!-- 	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+<!-- 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property> -->
+<!-- 		<property name="url" value="jdbc:mysql://banco?autoReconnect=true&amp;characterEncoding=utf8&amp;useUnicode=true&amp;sessionVariables=storage_engine%3DInnoDB&amp;interactiveClient=true&amp;useSSL=false"></property> -->
+<!-- 		<property name="username" value=""></property> -->
+<!-- 		<property name="password" value=""></property> -->
+<!-- 		<property name="validationQuery" value="SELECT 1" /> -->
+<!-- 		<property name="testOnBorrow" value="true" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="entityManagerFactory" -->
+<!-- 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="mysqlDataSource" /> -->
+<!-- 		<property name="jpaVendorAdapter"> -->
+<!-- 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> -->
+<!-- 		<property name="entityManagerFactory" ref="entityManagerFactory" /> -->
+<!-- 	</bean> -->
+	<tx:annotation-driven />
+</beans>

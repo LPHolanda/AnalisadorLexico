@@ -7,6 +7,7 @@ public class TesteTransdutor {
 
 	public static void main(String[] args) {
 
+		//String 12321l123A;
 		String entrada = "A25 345 A2 A A25 25B"; 
 		String saida = "";
 		String[] intermediario;
